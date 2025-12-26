@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*-t5=11&5(&@7n0mr*ita0lrf+9ge@euqw=907a+zzk*rq*0(6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
@@ -130,5 +131,7 @@ AUTH_USER_MODEL = 'jogos.User'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Quintas Europeias <noreply@quintaseuropeias.com>'
 
-CORS_ALLOW_ALL_ORIGINS = True  # só para testes
+CORS_ALLOW_ALL_ORIGINS = True  
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
 

@@ -1,10 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-import * as path from "path";
+import path from "path";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  root: ".", 
   plugins: [react()],
   resolve: {
     alias: {
@@ -13,6 +11,5 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    emptyOutDir: true,
   },
 });

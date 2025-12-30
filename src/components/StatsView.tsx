@@ -19,7 +19,8 @@ type SortKey =
   | "losses"
   | "goals"
   | "winRate"
-  | "participation";
+  | "participation"
+  | "points";
 
 type SortOrder = "asc" | "desc";
 
@@ -31,13 +32,14 @@ interface PlayerStats {
   draws: number;
   losses: number;
   goals: number;
+  points: number;
 }
 
 const StatsView = () => {
   const [players, setPlayers] = useState<PlayerStats[]>([]);
   const [matches, setMatches] = useState<Jogo[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortKey, setSortKey] = useState<SortKey>("goals");
+  const [sortKey, setSortKey] = useState<SortKey>("points");
   const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
   const [loading, setLoading] = useState(true);
 
@@ -83,6 +85,7 @@ const StatsView = () => {
             draws,
             losses,
             goals,
+            points: wins * 3 + draws * 1,
           };
         });
 
@@ -175,6 +178,7 @@ const StatsView = () => {
                   ["Golos", "goals"],
                   ["% Vitória", "winRate"],
                   ["% Participação", "participation"],
+                  ["Pontos", "points"],
                 ].map(([label, key]) => (
                   <TableHead
                     key={key}
@@ -201,6 +205,7 @@ const StatsView = () => {
                   <TableCell className="text-center">{p.goals}</TableCell>
                   <TableCell className="text-center">{getWinRate(p)}%</TableCell>
                   <TableCell className="text-center">{getParticipation(p)}%</TableCell>
+                  <TableCell className="text-center">{p.points}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

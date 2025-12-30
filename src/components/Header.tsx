@@ -27,7 +27,7 @@ const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
               <img
                 src="/quintas_horizontal.png"
                 alt="Quintas Europeias"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </a>
           </div>

@@ -30,11 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "quintas-europeias.onrender.com",
-]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -139,7 +135,8 @@ AUTH_USER_MODEL = 'jogos.User'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Quintas Europeias <noreply@quintaseuropeias.com>'
 
-CORS_ALLOW_ALL_ORIGINS = True  
+CORS_ALLOWED_ORIGINS = [
+    "https://quintaseuropeias.onrender.com",
+]  
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
-

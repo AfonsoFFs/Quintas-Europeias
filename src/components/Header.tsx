@@ -18,9 +18,11 @@ const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-lg">⚽</span>
-            </div>
+            <a href="https://quintas-europeias.onrender.com/admin/" target="_blank" rel="noopener noreferrer">
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
+                <span className="text-lg">⚽</span>
+              </div>
+            </a>
             <div>
               <h1 className="font-display text-xl text-foreground">
                 Quintas Europeias
@@ -38,10 +40,9 @@ const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`
                     flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200
-                    ${
-                      activeTab === tab.id
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ${activeTab === tab.id
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }
                   `}
                 >
@@ -62,10 +63,9 @@ const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`
                     p-2.5 rounded-lg transition-all duration-200
-                    ${
-                      activeTab === tab.id
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ${activeTab === tab.id
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
                     }
                   `}
                 >

@@ -6,6 +6,13 @@ from django import forms
 from django.contrib import messages
 from .models import Jogador, Jogo, Golo
 
+
+# Configurações globais do Admin
+admin.site.site_header = "Quintas Europeias"
+admin.site.site_title = "Quintas Europeias Admin"
+admin.site.index_title = "Bem-vindo à administração das Quintas Europeias"
+admin.site.site_url = "https://quintaseuropeias.onrender.com"
+
 User = get_user_model()
 
 #############################

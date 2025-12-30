@@ -18,18 +18,20 @@ const Header = ({ activeTab, setActiveTab }: HeaderProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <a href="https://quintas-europeias.onrender.com/admin/"
+            <a
+              href="https://quintas-europeias.onrender.com/admin/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <img
-                  src="/quintas_horizontal.png"
-                  alt="Quintas Europeias"
-                  className="w-6 h-6" />
-              </div>
+              className="flex items-center gap-2"
+            >
+              <img
+                src="/quintas_horizontal.png"
+                alt="Quintas Europeias"
+                className="h-8 w-auto"
+              />
             </a>
           </div>
+
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-1">
